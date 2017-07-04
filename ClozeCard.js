@@ -1,16 +1,16 @@
+'use strict';
+
 var inquirer = require("inquirer");
 var fronts = [];
 var cardCount = 0;
 var clozeText
 
-//text is the question; cloze is the answer
 function cardInfo(front, back) {
 	this.front = front
 	this.back = back
 
 }
 
-//make the sentence complete 
 cardInfo.prototype.full = function() {
 	//show sentence with a blank
 	clozeDeleted = this.back
@@ -38,7 +38,6 @@ fronts.push(front4);
 
 
 function basicCard() {
-	//recursion loop to prompt each question individually w/inquirer (also using cardCount to print each questin by array position)
 	if(cardCount < fronts.length) {
 
 				inquirer.prompt([
@@ -51,11 +50,11 @@ function basicCard() {
 						cardCount ++
 						basicCard();
 
-				});//then function
+				});//then 
 
-	}//recursion if statement
+	}// if statement
 
 
-}//studyfronts function
+}
 
 basicCard();
